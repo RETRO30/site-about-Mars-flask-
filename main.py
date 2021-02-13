@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import url_for
 
 app = Flask(__name__)
 
@@ -25,13 +26,15 @@ def promotion():
 
 @app.route('/image_mars')
 def image_mars():
-    data = """<html><head>
+    data = f"""<html><head>
     <title>Привет, Марс!</title>
     </head>
     <body><h1>Жди нас, Марс!</h1>
-    <p></p></body>
+    <p><img src="{url_for('static', filename='img/mars_image_1.png')}" alt="здесь должна была быть картинка, но не нашлась">
+    <br>Вот она какая, красная планета.</br></p></body>
     </html>"""
     return data
+
 
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
