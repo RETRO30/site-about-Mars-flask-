@@ -1,7 +1,9 @@
 from flask import Flask
 from flask import url_for
+from flask import request
 
 app = Flask(__name__)
+
 
 @app.route('/')
 def start_page():
@@ -51,7 +53,9 @@ def promotion_image():
                 <img src="{url_for('static', filename='img/mars_image_1.png')}" alt="здесь должна была быть картинка, но не нашлась">
                 <div class="alert alert-dark" role="alert"><strong>Человечество вырастает из детства.</strong></div>
                 <div class="alert alert-success" role="alert"><strong>Человечеству мала одна планета.</strong></div>
-                <div class="alert alert-secondary" role="alert"><strong>Мы сделаем обитаемыми безжизненные пока планеты.</strong></div>
+                <div class="alert alert-secondary" role="alert">
+                    <strong>Мы сделаем обитаемыми безжизненные пока планеты.</strong>
+                </div>
                 <div class="alert alert-warning" role="alert"><strong>И начнем с Марса!</strong></div>
                 <div class="alert alert-danger" role="alert"><strong>Присоединяйся!</strong></div>
             </p>
@@ -59,6 +63,15 @@ def promotion_image():
 </html>
 """
     return data
+
+
+@app.route('/astronaut_selection', methods=['GET', 'POST'])
+def astronaut_selection():
+    if request.method == 'GET':
+        data = open('astronaut_selection.html', encoding='utf8').read()
+        return data
+    elif request.method == 'POST':
+        return "Форма отправлена"
 
 
 if __name__ == '__main__':
