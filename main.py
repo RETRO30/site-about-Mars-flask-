@@ -74,5 +74,12 @@ def astronaut_selection():
         return "Форма отправлена"
 
 
+@app.route('/choice/<string:planet>')
+def choice(planet):
+    html = open('choice.html', encoding='utf8').read()
+    html = html.replace('%PLANET%', planet)
+    return html
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
