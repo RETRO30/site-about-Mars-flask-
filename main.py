@@ -81,5 +81,14 @@ def choice(planet):
     return html
 
 
+@app.route('/results/<nickname>/<int:level>/<float:rating>')
+def results(nickname, level, rating):
+    html = open('results.html', encoding='utf8').read()
+    html = html.replace('%NICKNAME%', nickname)
+    html = html.replace('%LEVEL%', str(level))
+    html = html.replace('%RATING%', str(rating))
+    return html
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
