@@ -90,5 +90,16 @@ def results(nickname, level, rating):
     return html
 
 
+@app.route('/load_photo', methods=['GET', 'POST'])
+def load_photo():
+    if request.method == 'GET':
+        data = open('load_image.html', encoding='utf8').read()
+        return data
+    elif request.method == 'POST':
+        f = request.files['file']
+        open('static/img/image_for_load_image.png', 'wb').write(f.read())
+        return 'Файл загружен'
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
