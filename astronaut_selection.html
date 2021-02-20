@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Отбор астронавтов</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div>
+        <h2 class="center">Анкета претендента</h2>
+        <h3 class="center">на участие в миссии</h3>
+        <form class="login_form" method="post">
+
+            <input type="text" class="form-control"
+                   placeholder="Фамилия" name="surname">
+            <input type="text" class="form-control"
+                   placeholder="Имя" name="name">
+            <input type="email" class="form-control"
+                   placeholder="Адрес электронной почты" name="email">
+            <div class="form-group">
+                <label for="classSelect">Какое у Вас образование</label>
+                <select class="form-control" id="classSelect" name="class">
+                    <option>Дошкольное</option>
+                    <option>Начальное</option>
+                    <option>Среднее</option>
+                    <option>Высшее</option>
+                    <option>Послевузовское</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="form-check">Какие у Вас есть профессии?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="profession" value="Инженер-исследователь">
+                    <label class="form-check-label">
+                        Инженер-исследователь</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="profession" value="Пилот">
+                    <label class="form-check-label">
+                       Пилот
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="profession" value="Строитель">
+                    <label class="form-check-label">
+                        Строитель
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="profession" value="Экзобиолог">
+                    <label class="form-check-label">
+                        Экзобиолог
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="profession" value="Врач">
+                    <label class="form-check-label">
+                        Врач
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="form-check">Укажите пол</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sex" id="male" value="male" checked>
+                    <label class="form-check-label" for="male">
+                        Мужской
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sex" id="female" value="female">
+                    <label class="form-check-label" for="female">
+                        Женский
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="about">Почему Вы хотите принять участие в миссии?</label>
+                <textarea class="form-control" id="about" rows="3" name="about"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="photo">Приложите фотографию</label>
+                <input type="file" class="form-control-file" id="photo" name="file">
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="acceptRules" name="accept">
+                <label class="form-check-label" for="acceptRules">Готовы ли Вы остаться на Марсе</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>
