@@ -101,5 +101,11 @@ def load_photo():
         return 'Файл загружен'
 
 
+@app.route('/carousel')
+def carousel():
+    html = open('carousel.html', encoding='utf8').read()
+    return html
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
